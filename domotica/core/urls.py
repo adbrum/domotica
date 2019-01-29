@@ -19,4 +19,5 @@ from domotica.core import views
 
 urlpatterns = [
     path('', views.index, name ='index'),
+    path('iluminacao/', views.lighting, name ='lighting')
 ]

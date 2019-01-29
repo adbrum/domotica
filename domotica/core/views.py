@@ -4,6 +4,11 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'core/index.html')
 
+
+def lighting(request):
+    print(request)
+    return render(request, 'core/lighting.html')
+
 # from django.http import HttpResponse
 
 
