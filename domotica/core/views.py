@@ -13,6 +13,11 @@ def surveillance(request):
     print(request)
     return render(request, 'core/surveillance.html')
 
+
+def cam01(request):
+    print(request)
+    return render(request, 'core/cam_01.html')
+
 # from django.http import HttpResponse
 
 

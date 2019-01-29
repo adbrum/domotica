@@ -168,7 +168,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            console.log("ready user!");
+            {% comment %}console.log("ready user!");
 
             function getCookie(name) {
                 var cookieValue = null;
@@ -183,9 +183,9 @@
                     }
                 }
                 return cookieValue;
-            }
+            }{% endcomment %}
 
-            $("#iluminacao").click(function () {
+            {% comment %}$("#iluminacao").click(function () {
                 var csrftoken = getCookie('csrftoken');
                 $.ajax({
                     url: "/iluminacao/",
@@ -199,9 +199,9 @@
                         //$(".form_id").html(data);
                     }
                 });
-            });
+            });{% endcomment %}
 
-            $("#video").click(function () {
+            {% comment %}$("#video").click(function () {
                 var csrftoken = getCookie('csrftoken');
                 $.ajax({
                     url: "/videovigilancia/",
@@ -215,6 +215,14 @@
                         //$(".form_id").html(data);
                     }
                 });
+            });{% endcomment %}
+
+            $("#iluminacao").click(function () {
+                window.location = "/iluminacao/";
+            });
+
+            $("#video").click(function () {
+                window.location = "/videovigilancia/";
             });
 
         });
