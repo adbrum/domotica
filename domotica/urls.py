@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('domotica/', include('domotica.core.urls')),
+    path('', include('domotica.core.urls')),
     path('admin/', admin.site.urls),
 ]

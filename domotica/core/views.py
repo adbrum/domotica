@@ -6,8 +6,12 @@ def index(request):
 
 
 def lighting(request):
-    print(request)
     return render(request, 'core/lighting.html')
+
+
+def surveillance(request):
+    print(request)
+    return render(request, 'core/surveillance.html')
 
 # from django.http import HttpResponse
 

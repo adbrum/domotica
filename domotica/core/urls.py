@@ -18,6 +18,7 @@ from django.urls import path
 from domotica.core import views
 
 urlpatterns = [
-    path('', views.index, name ='index'),
-    path('iluminacao/', views.lighting, name ='lighting')
+    path('', views.index, name='index'),
+    path('iluminacao/', views.lighting, name='lighting'),
+    path('videovigilancia/', views.surveillance, name='surveillance')
 ]

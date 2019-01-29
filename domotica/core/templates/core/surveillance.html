@@ -1,0 +1,120 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid" id="form_id">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron text-right">
+                    <div class="text-left">
+                        <h1>
+                            <i class="fa fa-home" id="home">Principal</i>
+                        </h1>
+                    </div>
+                    <h1>
+                        3 - Vídeo Vigilância
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" id="porta_entrada">
+                <div class="card-block">
+                    <h2 class="card-title  text-center">
+                        1. Câmara Porta Entrada
+                    </h2>
+                </div>
+                <div>
+                    <div class="col-md-12" align="center">
+                        <div>
+                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="porta_entrada">
+                <div class="card-block">
+                    <h2 class="card-title  text-center">
+                        2. Câmara Frente
+                    </h2>
+                </div>
+                <div>
+                    <div class="col-md-12" align="center">
+                        <div>
+                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="porta_entrada">
+                <div class="card-block">
+                    <h2 class="card-title  text-center">
+                        3. Câmara Traseira
+                    </h2>
+                </div>
+                <div>
+                    <div class="col-md-12" align="center">
+                        <div>
+                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4" id="porta_entrada">
+                <div class="card-block">
+                    <h2 class="card-title  text-center">
+                        4. Câmara Lado Esquerdo
+                    </h2>
+                </div>
+                <div>
+                    <div class="col-md-12" align="center">
+                        <div>
+                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="porta_entrada">
+                <div class="card-block">
+                    <h2 class="card-title  text-center">
+                        5. Câmara Lado Direito
+                    </h2>
+                </div>
+                <div>
+                    <div class="col-md-12" align="center">
+                        <div>
+                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="porta_entrada">
+                <div class="card-block">
+                    <h2 class="card-title  text-center">
+                        6. Câmara Quintal
+                    </h2>
+                </div>
+                <div>
+                    <div class="col-md-12" align="center">
+                        <div>
+                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#home").click(function () {
+                window.location = "/";
+            });
+        });
+    </script>
+{% endblock javascript %}
