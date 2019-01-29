@@ -1,6 +1,8 @@
 {% extends "core/base.html" %}
 {% load static %}
 {% block content %}
+
+
     <div class="container-fluid" id="form_id">
         <div class="row">
             <div class="col-md-12">
@@ -18,19 +20,33 @@
                         1. Sala
                     </h2>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="col-md-3">
                         <div>
-                            <img id="light_state" src="{% static 'images/lampada-off.jpg' %}"/>
-                        </div>
-                        <div>
-                            <button type="button" id="btn_on" class="btn btn-primary btn-lg btn-block">Ligar/Desligar</button>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6"  align="center">
                         <div>
-                            <img id="estore_state" src="{% static 'images/estore_01.jpg' %}" style="height: 220px"/>
+                            <img class="img" id="light_state" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
+                        <div>
+                            <button type="button" id="btn_on" class="btn btn-primary btn-lg btn-block">Ligar/Desligar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6"  align="center">
+                        <div id="estore_state">
+                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 230px"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" id="opacity" class="btn btn-success btn-block">Abrir</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" id="opacity2" class="btn btn-primary btn-block">Fechar</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -47,7 +63,7 @@
                     </div>
                     <div class="col-md-3">
                         <div>
-                            <img id="light_state_01" src="{% static 'images/lampada-off.jpg' %}"/>
+                            <img class="img" id="light_state_01" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -79,7 +95,7 @@
                     </div>
                     <div class="col-md-3">
                         <div>
-                            <img id="light_state_02" src="{% static 'images/lampada-off.jpg' %}"/>
+                            <img class="img" id="light_state_02" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -115,7 +131,7 @@
                     </div>
                     <div class="col-md-3">
                         <div>
-                            <img id="light_state_03" src="{% static 'images/lampada-off.jpg' %}"/>
+                            <img class="img" id="light_state_03" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -147,7 +163,7 @@
                     </div>
                     <div class="col-md-3">
                         <div>
-                            <img id="light_state_04" src="{% static 'images/lampada-off.jpg' %}"/>
+                            <img class="img" id="light_state_04" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -202,7 +218,7 @@
 
         /*SALA*/
 
-        $('img').on({
+        $('.img').on({
             'click': function () {
                 var src = ($(this).attr('src') === "{% static 'images/lampada-on.jpg' %}")
                     ? "{% static 'images/lampada-off.jpg' %}"
@@ -272,5 +288,27 @@
             $('#light_state_03').attr('src', "{% static 'images/lampada-off.jpg' %}");
             $('#light_state_04').attr('src', "{% static 'images/lampada-off.jpg' %}");
         });
+
+
+        function changeOpacity() {
+            $("#opacity").click(function () {
+                var pippo = $('#estore_state').css('opacity');
+                var pluto = $('#estore_state').css('opacity');
+                $("#estore_state").css("opacity", parseFloat(pippo) + 0.1);
+                $("#estore_state").css("opacity", parseFloat(pluto) - 0.1);
+
+                console.log(pippo + 0.1);
+            });
+            $("#opacity2").click(function () {
+                var pi = $('#estore_state').css('opacity');
+                var pl = $('#estore_state').css('opacity');
+                $("#estore_state").css("opacity", parseFloat(pi) - 0.1);
+                $("#estore_state").css("opacity", parseFloat(pl) + 0.1);
+                return false;
+            });
+        }
+
+        changeOpacity();
+
     </script>
 {% endblock javascript %}
