@@ -23,10 +23,13 @@
                         <div>
                             <img id="light_state" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
+                        <div>
+                            <button type="button" id="btn_on" class="btn btn-primary btn-lg btn-block">Ligar/Desligar</button>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div>
-                            <img id="light_state" src="{% static 'images/estore_01.jpg' %}" style="height: 220px"/>
+                            <img id="estore_state" src="{% static 'images/estore_01.jpg' %}" style="height: 220px"/>
                         </div>
                     </div>
                 </div>
@@ -44,16 +47,17 @@
                     </div>
                     <div class="col-md-3">
                         <div>
-                            <img id="light_state" src="{% static 'images/lampada-off.jpg' %}"/>
+                            <img id="light_state_01" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div>
-                            <button type="button" class="btn btn-primary btn-lg btn-block">Ligar</button>
+                            <button type="button" id="btn_on_01" class="btn btn-primary btn-lg btn-block">Ligar</button>
                         </div>
                         <br>
                         <div>
-                            <button type="button" class="btn btn-danger btn-lg btn-block">Desligar</button>
+                            <button type="button" id="btn_off_01" class="btn btn-danger btn-lg btn-block">Desligar
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-3" style="height: 370px;">
@@ -62,91 +66,66 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center" id="estores">
+            <div class="col-md-4" id="quarto_02">
+                <div class="card-block">
+                    <h2 class="card-title  text-center">
+                        3. Quarto 2
+                    </h2>
+                </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3" style="height: 370px;">
                         <div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div>
-                            <img class="card-img-top mw-100" alt="Bootstrap Thumbnail First"
-                                 src="https://cdn.es.tiendas.com/images/?url=rPRb9CenFBqcWcNXglsYuabGLQJd5X%2BmOAKTQOCRtgn%2BRnVFaIXGu5%2BGdK2iuz%2Bv1%2FC361LA9dSkRZY03%2FjIEAhRWXrj9MvwQP4rq24osEg%3D&w=300&h=300&t=letterbox&trim=1&bg=white"/>
+                            <img id="light_state_02" src="{% static 'images/lampada-off.jpg' %}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>
+                            <button type="button" id="btn_on_02" class="btn btn-primary btn-lg btn-block">Ligar</button>
+                        </div>
+                        <br>
+                        <div>
+                            <button type="button" id="btn_off_02" class="btn btn-danger btn-lg btn-block">Desligar
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-3" style="height: 370px;">
                         <div>
                         </div>
                     </div>
-                </div>
-                <div class="card-block">
-                    <h2 class="card-title text-center">
-                        3. Estores
-                    </h2>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4" id="video">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div>
-                            <img class="card-img-top" alt="Bootstrap Thumbnail First"
-                                 src="http://www.scvpti.pt/wp-content/uploads/2016/07/201407211604-videovigilancia.jpg"/>
-                        </div>
-                    </div>
-                    <div class="col-md-3" style="height: 370px;">
-                        <div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4" id="cozinha">
                 <div class="card-block">
                     <h2 class="card-title  text-center">
-                        4. Vídeo Vigilância
+                        4. Quarto 3
                     </h2>
                 </div>
-            </div>
-            <div class="col-md-4 text-center" id="temperatura">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3" style="height: 370px;">
                         <div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div>
-                            <img class="card-img-top" alt="Bootstrap Thumbnail First" width="10px" height="370px"
-                                 src="https://thumbs.dreamstime.com/z/icona-del-termometro-che-misura-temperatura-calda-e-fredda-86649219.jpg"/>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div>
-
+                            <img id="light_state_03" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
                     </div>
-                </div>
-                <div class="card-block">
-                    <h2 class="card-title text-center">
-                        5. Temperatura
-                    </h2>
-                </div>
-            </div>
-            <div class="col-md-4 text-center" id="configuracao">
-                <div class="row">
                     <div class="col-md-3">
                         <div>
+                            <button type="button" id="btn_on_03" class="btn btn-primary btn-lg btn-block">Ligar</button>
                         </div>
-                    </div>
-                    <div class="col-md-6">
+                        <br>
                         <div>
-                            <img class="card-img-top" alt="Bootstrap Thumbnail First"
-                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT64qk0qY5bJ23dQqqO9xj6rvz98McMOY1OAFqbIj8PnzYjGrVo"/>
+                            <button type="button" id="btn_off_03" class="btn btn-danger btn-lg btn-block">Desligar
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-3" style="height: 370px;">
@@ -154,33 +133,144 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-4" id="garagem">
                 <div class="card-block">
-                    <h2 class="card-title text-center">
-                        3. Configurações
+                    <h2 class="card-title  text-center">
+                        6. Garagem
                     </h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-3" style="height: 370px;">
+                        <div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>
+                            <img id="light_state_04" src="{% static 'images/lampada-off.jpg' %}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div>
+                            <button type="button" id="btn_on_04" class="btn btn-primary btn-lg btn-block">Ligar</button>
+                        </div>
+                        <br>
+                        <div>
+                            <button type="button" id="btn_off_04" class="btn btn-danger btn-lg btn-block">Desligar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="height: 370px;">
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="garagem">
+                <div class="card-block">
+                    <h2 class="card-title  text-center">
+                        5. Geral
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-2" style="height: 370px;">
+                        <div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div>
+                            <button type="button" id="btn_on_05" class="btn btn-primary btn-lg btn-block">Ligar</button>
+                        </div>
+                        <br>
+                        <div>
+                            <button type="button" id="btn_off_05" class="btn btn-danger btn-lg btn-block">Desligar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="height: 370px;">
+                        <div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 {% endblock content %}
 
-//{% block javascript %}
+{% block javascript %}
     <script type="text/javascript">
-        $("#iluminacao").click(function () {
-            console.log('XXXXXXXXXXXXXXXXXXXXXXXXX')
-            //var csrftoken = getCookie('csrftoken');
-            //var idUserProfile = $(this).attr("name");
-            /*$.ajax({
-                url: '/',
-                type: 'GET',
-                data: {},
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                },
-                success: function (data) {
-                    $(".form_id").html(data);
-                }
-            });*/
+
+        /*SALA*/
+
+        $('img').on({
+            'click': function () {
+                var src = ($(this).attr('src') === "{% static 'images/lampada-on.jpg' %}")
+                    ? "{% static 'images/lampada-off.jpg' %}"
+                    : "{% static 'images/lampada-on.jpg' %}";
+                $(this).attr('src', src);
+            }
+        });
+
+
+        var togSrc = ["{% static 'images/lampada-on.jpg' %}", "{% static 'images/lampada-off.jpg' %}"];
+
+        $("#btn_on").click(function () {
+
+            $('#light_state').attr('src', togSrc.reverse()[0]);
+        });
+
+
+        /*QUARTO 1*/
+
+        $('#btn_on_01').click(function () {
+            $('#light_state_01').attr('src', "{% static 'images/lampada-on.jpg' %}");
+        });
+        $('#btn_off_01').click(function () {
+            $('#light_state_01').attr('src', "{% static 'images/lampada-off.jpg' %}");
+        });
+
+        /*QUARTO 2*/
+
+        $('#btn_on_02').click(function () {
+            $('#light_state_02').attr('src', "{% static 'images/lampada-on.jpg' %}");
+        });
+        $('#btn_off_02').click(function () {
+            $('#light_state_02').attr('src', "{% static 'images/lampada-off.jpg' %}");
+        });
+
+        /*COZINHA*/
+
+        $('#btn_on_03').click(function () {
+            $('#light_state_03').attr('src', "{% static 'images/lampada-on.jpg' %}");
+        });
+        $('#btn_off_03').click(function () {
+            $('#light_state_03').attr('src', "{% static 'images/lampada-off.jpg' %}");
+        });
+
+        /*GARAGEN*/
+
+        $('#btn_on_04').click(function () {
+            $('#light_state_04').attr('src', "{% static 'images/lampada-on.jpg' %}");
+        });
+        $('#btn_off_04').click(function () {
+            $('#light_state_04').attr('src', "{% static 'images/lampada-off.jpg' %}");
+        });
+
+        /*GARAGEN*/
+
+        $('#btn_on_05').click(function () {
+            $('#light_state').attr('src', "{% static 'images/lampada-on.jpg' %}");
+            $('#light_state_01').attr('src', "{% static 'images/lampada-on.jpg' %}");
+            $('#light_state_02').attr('src', "{% static 'images/lampada-on.jpg' %}");
+            $('#light_state_03').attr('src', "{% static 'images/lampada-on.jpg' %}");
+            $('#light_state_04').attr('src', "{% static 'images/lampada-on.jpg' %}");
+        });
+        $('#btn_off_05').click(function () {
+            $('#light_state').attr('src', "{% static 'images/lampada-off.jpg' %}");
+            $('#light_state_01').attr('src', "{% static 'images/lampada-off.jpg' %}");
+            $('#light_state_02').attr('src', "{% static 'images/lampada-off.jpg' %}");
+            $('#light_state_03').attr('src', "{% static 'images/lampada-off.jpg' %}");
+            $('#light_state_04').attr('src', "{% static 'images/lampada-off.jpg' %}");
         });
     </script>
-    //{% endblock javascript %}
+{% endblock javascript %}
