@@ -12,52 +12,8 @@
                     </div>
                     <div class="col-md-6 text-right">
                         <h1>
-                            <i class="fa fa-video"> CAM 01</i>
+                            <i class="fa fa-video"> Porta Entrada</i>
                         </h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4" id="porta_entrada">
-                <div class="card-block">
-                    <h2 class="card-title  text-center">
-                        1. Câmara Porta Entrada
-                    </h2>
-                </div>
-                <div>
-                    <div class="col-md-12" align="center">
-                        <div>
-                            <img class="img" id="cam_01" src="{% static 'images/camera_dog.jpg' %}"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" id="porta_entrada">
-                <div class="card-block">
-                    <h2 class="card-title  text-center">
-                        2. Câmara Frente
-                    </h2>
-                </div>
-                <div>
-                    <div class="col-md-12" align="center">
-                        <div>
-                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" id="porta_entrada">
-                <div class="card-block">
-                    <h2 class="card-title  text-center">
-                        3. Câmara Traseira
-                    </h2>
-                </div>
-                <div>
-                    <div class="col-md-12" align="center">
-                        <div>
-                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -65,45 +21,45 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4" id="porta_entrada">
-                <div class="card-block">
-                    <h2 class="card-title  text-center">
-                        4. Câmara Lado Esquerdo
-                    </h2>
-                </div>
+            <div class="col-md-8 card" id="porta_entrada">
                 <div>
-                    <div class="col-md-12" align="center">
+                    <div class="col-md-12" align="left">
                         <div>
-                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
+                            <img class="img" id="light_state" src="{% static 'images/gnr.png' %}"/>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" id="porta_entrada">
-                <div class="card-block">
-                    <h2 class="card-title  text-center">
-                        5. Câmara Lado Direito
-                    </h2>
-                </div>
+            <div class="col-md-2 card">
+                <br>
                 <div>
-                    <div class="col-md-12" align="center">
-                        <div>
-                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
-                        </div>
+                    <button type="button" id="btn_on_05" class="btn btn-success btn-lg btn-block">1. Abrir Porta
+                    </button>
+                </div>
+                <br>
+                <div>
+                    <button type="button" id="btn_off_05" class="btn btn-warning btn-lg btn-block">2. Audio
+                        Ligar/Desligar
+                    </button>
+                </div>
+                <br>
+                <div>
+                    <button type="button" id="btn_back" class="btn btn-primary btn-lg btn-block">0. Voltar Principal
+                    </button>
+                </div>
+                <br>
+                <div class="col-md-12" align="center">
+                    <div id="porta" style="display:none">
+                        <h1>
+                            <i class="fas fa-door-open"></i>
+                            Porta aberta com sucesso!
+                        </h1>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4" id="porta_entrada">
-                <div class="card-block">
-                    <h2 class="card-title  text-center">
-                        6. Câmara Quintal
-                    </h2>
-                </div>
-                <div>
-                    <div class="col-md-12" align="center">
-                        <div>
-                            <img class="img" id="light_state" src="{% static 'images/camera_dog.jpg' %}"/>
-                        </div>
+                    <div id="audio" style="display:none">
+                        <h1>
+                            <i class="fas fa-volume-up"></i>
+                            Som ligado!
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -116,6 +72,18 @@
         $(document).ready(function () {
             $("#home").click(function () {
                 window.location = "/";
+            });
+
+            $("#btn_back").click(function () {
+                window.location = "/";
+            });
+
+            $("#btn_on_05").click(function () {
+                $("#porta").toggle();
+            });
+
+            $("#btn_off_05").click(function () {
+                $("#audio").toggle();
             });
         });
     </script>
