@@ -229,6 +229,16 @@
                 window.location = "/videovigilancia/";
             });
 
+            $(document).bind('keydown', function (e) {
+                if (e.which === 97){
+                    window.location = "/iluminacao/";
+                }
+                if (e.which === 99){
+                    window.location = "/videovigilancia/";
+                }
+                //alert(e.type + ': ' + e.which);
+            });
+
         });
     </script>
 {% endblock javascript %}

@@ -85,6 +85,19 @@
             $("#btn_off_05").click(function () {
                 $("#audio").toggle();
             });
+
+            $(document).bind('keydown', function (e) {
+                //alert(e.type + ': ' + e.which);
+                if (e.which === 97) {
+                    $("#btn_on_05").trigger('click');
+                }
+                if (e.which === 98) {
+                    $("#btn_off_05").trigger('click');
+                }
+                if (e.which === 96) {
+                    $("#btn_back").trigger('click');
+                }
+            });
         });
     </script>
 {% endblock javascript %}

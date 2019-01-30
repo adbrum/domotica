@@ -199,7 +199,8 @@
                     </div>
                     <div class="col-md-8">
                         <div>
-                            <button type="button" id="btn_on_05" class="btn btn-success btn-lg btn-block">Ligar Tudo</button>
+                            <button type="button" id="btn_on_05" class="btn btn-success btn-lg btn-block">Ligar Tudo
+                            </button>
                         </div>
                         <br>
                         <div>
@@ -208,7 +209,8 @@
                         </div>
                         <br>
                         <div>
-                            <button type="button" id="btn_back" class="btn btn-primary btn-lg btn-block">0. Voltar Principal
+                            <button type="button" id="btn_back" class="btn btn-primary btn-lg btn-block">0. Voltar
+                                Principal
                             </button>
                         </div>
                     </div>
@@ -257,8 +259,8 @@
 
         /*QUARTO 1*/
 
-      /*  $('#btn_on_01').click(function () {
-            $('#light_state_01').attr('src', "{% static 'images/lampada-on.jpg' %}");
+        /*  $('#btn_on_01').click(function () {
+              $('#light_state_01').attr('src', "{% static 'images/lampada-on.jpg' %}");
         });
         $('#btn_off_01').click(function () {
             $('#light_state_01').attr('src', "{% static 'images/lampada-off.jpg' %}");
@@ -266,8 +268,8 @@
 
         /*QUARTO 2*/
 
-       /* $('#btn_on_02').click(function () {
-            $('#light_state_02').attr('src', "{% static 'images/lampada-on.jpg' %}");
+        /* $('#btn_on_02').click(function () {
+             $('#light_state_02').attr('src', "{% static 'images/lampada-on.jpg' %}");
         });
         $('#btn_off_02').click(function () {
             $('#light_state_02').attr('src', "{% static 'images/lampada-off.jpg' %}");
@@ -367,6 +369,40 @@
 
         $("#btn_back").click(function () {
             window.location = "/";
+        });
+
+        $(document).bind('keydown', function (e) {
+            //alert(e.type + ': ' + e.which);
+            if (e.which === 97) {
+                $('#light_state').attr('src', togSrc.reverse()[0]);
+            }
+            if (e.which === 98) {
+                $("#opacity").trigger('click');
+            }
+            if (e.which === 99) {
+                $("#opacity2").trigger('click');
+            }
+            if (e.which === 100) {
+                $('#light_state_01').attr('src', togSrc.reverse()[0]);
+            }
+            if (e.which === 101) {
+                $("#opacity3").trigger('click');
+            }
+            if (e.which === 102) {
+                $("#opacity4").trigger('click');
+            }
+            if (e.which === 103) {
+                $('#light_state_02').attr('src', togSrc.reverse()[0]);
+            }
+            if (e.which === 104) {
+                $("#opacity5").trigger('click');
+            }
+            if (e.which === 105) {
+                $("#opacity6").trigger('click');
+            }
+            if (e.which === 96) {
+                $("#btn_back").trigger('click');
+            }
         });
 
     </script>
