@@ -1,0 +1,1 @@
+web: gunicorn domotica.wsgi --log-file -
