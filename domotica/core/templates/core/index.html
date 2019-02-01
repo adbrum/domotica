@@ -78,7 +78,7 @@
                 </div>
                 <div class="card-block">
                     <h2 class="card-title  text-center">
-                        3. Vídeo Vigilância
+                        3. Vídeovigilância
                     </h2>
                 </div>
             </div>
@@ -161,7 +161,33 @@
                 </div>
             </div>
         </div>
+    <div class="row">
+            <div class="col-md-4" id="video">
+
+            </div>
+            <div class="col-md-4 text-center" id="temperatura">
+
+            </div>
+            <div class="col-md-4 text-center" id="configuracao">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+                <div class="card-block">
+                    <h1 class="text-right">
+                <i class="far fa-question-circle"></i>
+            </h1>
+                </div>
+            </div>
+        </div>
     </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -172,55 +198,6 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            {% comment %}console.log("ready user!");
-
-            function getCookie(name) {
-                var cookieValue = null;
-                if (document.cookie && document.cookie != '') {
-                    var cookies = document.cookie.split(';');
-                    for (var i = 0; i < cookies.length; i++) {
-                        var cookie = jQuery.trim(cookies[i]);
-                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                            break;
-                        }
-                    }
-                }
-                return cookieValue;
-            }{% endcomment %}
-
-            {% comment %}$("#iluminacao").click(function () {
-                var csrftoken = getCookie('csrftoken');
-                $.ajax({
-                    url: "/iluminacao/",
-                    type: 'GET',
-                    data: {},
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                    },
-                    success: function (data) {
-                        window.location = "/iluminacao/";
-                        //$(".form_id").html(data);
-                    }
-                });
-            });{% endcomment %}
-
-            {% comment %}$("#video").click(function () {
-                var csrftoken = getCookie('csrftoken');
-                $.ajax({
-                    url: "/videovigilancia/",
-                    type: 'GET',
-                    data: {},
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                    },
-                    success: function (data) {
-                        window.location = "/videovigilancia/";
-                        //$(".form_id").html(data);
-                    }
-                });
-            });{% endcomment %}
-
             $("#iluminacao").click(function () {
                 window.location = "/iluminacao/";
             });
