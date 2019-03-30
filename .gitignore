@@ -1,9 +1,10 @@
 .DS_Store
 venv
 .env
-.idea
+.idea/
 *.sqlite3
 *.pyc
 __pycache__
 staticfiles
 .ipynb_checkpoints/
+.vscode/
