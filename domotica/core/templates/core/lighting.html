@@ -225,6 +225,7 @@
 {% endblock content %}
 
 {% block javascript %}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
 
         /*SALA*/
@@ -242,19 +243,42 @@
         var togSrc = ["{% static 'images/lampada-on.jpg' %}", "{% static 'images/lampada-off.jpg' %}"];
 
         $("#btn_on").click(function () {
-
-            $('#light_state').attr('src', togSrc.reverse()[0]);
+           $('#light_state').attr('src', togSrc.reverse()[0]);
+           on_off_light($('#light_state').attr('src'))
         });
 
         $("#btn_on_01").click(function () {
-
             $('#light_state_01').attr('src', togSrc.reverse()[0]);
+            on_off_light($('#light_state_01').attr('src'))
         });
 
         $("#btn_on_02").click(function () {
-
             $('#light_state_02').attr('src', togSrc.reverse()[0]);
+            on_off_light($('#light_state_02').attr('src'))
         });
+
+        function on_off_light(state){
+            var state;
+
+            if ((state === "{% static 'images/lampada-on.jpg' %}") ) {
+                console.log('ON')
+                state = true;
+            }else {
+                console.log('OFF')
+                state = false;
+            }
+
+            $.ajax({
+            url: "/iluminacao/",
+            type: 'GET',
+            data: {state},
+            //dataType: 'json', // added data type
+            success: function(res) {
+                //console.log(res);
+                //alert(res);
+                }
+            });
+        }
 
 
         /*QUARTO 1*/
@@ -313,51 +337,93 @@
 
         function changeOpacity() {
             $("#opacity").click(function () {
-                var pippo = $('#estore_state').css('opacity');
-                var pluto = $('#estore_state').css('opacity');
-                $("#estore_state").css("opacity", parseFloat(pippo) + 0.1);
-                $("#estore_state").css("opacity", parseFloat(pluto) - 0.1);
-
-                console.log(pippo + 0.1);
+                var i;
+                for(i=0; i<9; i++) {
+                    (function(i){
+                        setTimeout(function(){
+                        var pippo = $('#estore_state').css('opacity');
+                        var pluto = $('#estore_state').css('opacity');
+                        $("#estore_state").css("opacity", parseFloat(pippo) + 0.1);
+                        $("#estore_state").css("opacity", parseFloat(pluto) - 0.1);
+                        console.log(pippo + 0.1);
+                    }, 500*i);
+                })(i);
+                }
             });
+
             $("#opacity2").click(function () {
-                var pi = $('#estore_state').css('opacity');
-                var pl = $('#estore_state').css('opacity');
-                $("#estore_state").css("opacity", parseFloat(pi) - 0.1);
-                $("#estore_state").css("opacity", parseFloat(pl) + 0.1);
-                return false;
+                var i;
+                for(i=0; i<9; i++) {
+                    (function(i){
+                        setTimeout(function(){
+                        var pi = $('#estore_state').css('opacity');
+                        var pl = $('#estore_state').css('opacity');
+                        $("#estore_state").css("opacity", parseFloat(pi) - 0.1);
+                        $("#estore_state").css("opacity", parseFloat(pl) + 0.1);
+                        return false;
+                        }, 500*i);
+                    })(i);
+                }
             });
 
             $("#opacity3").click(function () {
-                var pippo = $('#estore_state_01').css('opacity');
-                var pluto = $('#estore_state_01').css('opacity');
-                $("#estore_state_01").css("opacity", parseFloat(pippo) + 0.1);
-                $("#estore_state_01").css("opacity", parseFloat(pluto) - 0.1);
+                var i;
+                for(i=0; i<9; i++) {
+                    (function(i){
+                        setTimeout(function(){
+                        var pippo = $('#estore_state_01').css('opacity');
+                        var pluto = $('#estore_state_01').css('opacity');
+                        $("#estore_state_01").css("opacity", parseFloat(pippo) + 0.1);
+                        $("#estore_state_01").css("opacity", parseFloat(pluto) - 0.1);
 
-                console.log(pippo + 0.1);
+                        console.log(pippo + 0.1);
+                    }, 500*i);
+                })(i);
+                }
             });
             $("#opacity4").click(function () {
-                var pi = $('#estore_state_01').css('opacity');
-                var pl = $('#estore_state_01').css('opacity');
-                $("#estore_state_01").css("opacity", parseFloat(pi) - 0.1);
-                $("#estore_state_01").css("opacity", parseFloat(pl) + 0.1);
-                return false;
+                var i;
+                for(i=0; i<9; i++) {
+                    (function(i){
+                        setTimeout(function(){
+                        var pi = $('#estore_state_01').css('opacity');
+                        var pl = $('#estore_state_01').css('opacity');
+                        $("#estore_state_01").css("opacity", parseFloat(pi) - 0.1);
+                        $("#estore_state_01").css("opacity", parseFloat(pl) + 0.1);
+                        return false;
+                        }, 500*i);
+                    })(i);
+                }
             });
 
             $("#opacity5").click(function () {
-                var pippo = $('#estore_state_02').css('opacity');
-                var pluto = $('#estore_state_02').css('opacity');
-                $("#estore_state_02").css("opacity", parseFloat(pippo) + 0.1);
-                $("#estore_state_02").css("opacity", parseFloat(pluto) - 0.1);
+                var i;
+                for(i=0; i<9; i++) {
+                    (function(i){
+                        setTimeout(function(){
+                        var pippo = $('#estore_state_02').css('opacity');
+                        var pluto = $('#estore_state_02').css('opacity');
+                        $("#estore_state_02").css("opacity", parseFloat(pippo) + 0.1);
+                        $("#estore_state_02").css("opacity", parseFloat(pluto) - 0.1);
 
-                console.log(pippo + 0.1);
+                        console.log(pippo + 0.1);
+                    }, 500*i);
+                })(i);
+                }
             });
             $("#opacity6").click(function () {
-                var pi = $('#estore_state_02').css('opacity');
-                var pl = $('#estore_state_02').css('opacity');
-                $("#estore_state_02").css("opacity", parseFloat(pi) - 0.1);
-                $("#estore_state_02").css("opacity", parseFloat(pl) + 0.1);
-                return false;
+                var i;
+                for(i=0; i<9; i++) {
+                    (function(i){
+                        setTimeout(function(){
+                        var pi = $('#estore_state_02').css('opacity');
+                        var pl = $('#estore_state_02').css('opacity');
+                        $("#estore_state_02").css("opacity", parseFloat(pi) - 0.1);
+                        $("#estore_state_02").css("opacity", parseFloat(pl) + 0.1);
+                        return false;
+                        }, 500*i);
+                    })(i);
+                }
             });
         }
 
