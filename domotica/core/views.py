@@ -7,7 +7,11 @@ def on_message(client, userdata, message):
     time.sleep(1)
     print("received message =",str(message.payload.decode("utf-8")))
 
-def clientConnect(state):
+def clientConnect(request):
+    state = request.GET.get('state')
+    place = request.GET.get('place')
+    print('STATE: ',state)
+    print('PLACE: ', place)
     broker="192.168.1.46"
     client= paho.Client("client-001") #create client object client1.on_publish = on_publish #assign function to callback client1.connect(broker,port) #establish connection client1.publish("house/bulb1","on")
     ######Bind function to callback
@@ -17,23 +21,21 @@ def clientConnect(state):
     client.connect(broker)#connect
     client.loop_start() #start loop to process received messages
     print("subscribing ")
-    client.subscribe("test")#subscribe
+    client.subscribe(place)#subscribe
     time.sleep(1)
     print("publishing ")
-    client.publish("test",state)#publish
+    client.publish(place, state)#publish
     time.sleep(1)
     client.disconnect() #disconnect
     client.loop_stop() #stop loop
+    return render(request, 'core/index.html')
 
 def index(request):
     return render(request, 'core/index.html')
 
 
 def lighting(request):
-    #clientConnect()
-    state = request.GET.get('state')
-    print(state)
-    clientConnect(state)
+    print(request)
     return render(request, 'core/lighting.html')
 
 
@@ -45,12 +47,6 @@ def surveillance(request):
 def cam01(request):
     print(request)
     return render(request, 'core/cam_01.html')
-
-# from django.http import HttpResponse
-
-
-# def index(request):
-#   return HttpResponse("Hello, world. You're at the polls index.")
 
 
 

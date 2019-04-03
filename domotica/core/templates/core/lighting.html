@@ -244,20 +244,20 @@
 
         $("#btn_on").click(function () {
            $('#light_state').attr('src', togSrc.reverse()[0]);
-           on_off_light($('#light_state').attr('src'))
+           on_off_light($('#light_state').attr('src'), 'sala')
         });
 
         $("#btn_on_01").click(function () {
             $('#light_state_01').attr('src', togSrc.reverse()[0]);
-            on_off_light($('#light_state_01').attr('src'))
+            on_off_light($('#light_state_01').attr('src'), 'quarto')
         });
 
         $("#btn_on_02").click(function () {
             $('#light_state_02').attr('src', togSrc.reverse()[0]);
-            on_off_light($('#light_state_02').attr('src'))
+            on_off_light($('#light_state_02').attr('src'), 'cozinha')
         });
 
-        function on_off_light(state){
+        function on_off_light(state, place){
             var state;
 
             if ((state === "{% static 'images/lampada-on.jpg' %}") ) {
@@ -269,14 +269,22 @@
             }
 
             $.ajax({
-            url: "/iluminacao/",
+            url: {% url 'clientConnect' %},
             type: 'GET',
-            data: {state},
+            data: {"state": state, "place": place},
             //dataType: 'json', // added data type
-            success: function(res) {
+            //success: function(res) {
                 //console.log(res);
                 //alert(res);
-                }
+                //}
+            });
+        }
+
+        function on_off_estores(state, place){
+            $.ajax({
+                url: {% url 'clientConnect' %},
+                type: 'GET',
+                data: {"state": state, "place": place},
             });
         }
 
@@ -337,6 +345,7 @@
 
         function changeOpacity() {
             $("#opacity").click(function () {
+                on_off_estores(true, 'estore_sala')
                 var i;
                 for(i=0; i<9; i++) {
                     (function(i){
@@ -352,6 +361,7 @@
             });
 
             $("#opacity2").click(function () {
+                on_off_estores(false, 'estore_sala')
                 var i;
                 for(i=0; i<9; i++) {
                     (function(i){
@@ -367,6 +377,7 @@
             });
 
             $("#opacity3").click(function () {
+                on_off_estores(true, 'estore_quarto')
                 var i;
                 for(i=0; i<9; i++) {
                     (function(i){
@@ -382,6 +393,7 @@
                 }
             });
             $("#opacity4").click(function () {
+                on_off_estores(false, 'estore_quarto')
                 var i;
                 for(i=0; i<9; i++) {
                     (function(i){
@@ -397,6 +409,7 @@
             });
 
             $("#opacity5").click(function () {
+                on_off_estores(true, 'estore_cozinha')
                 var i;
                 for(i=0; i<9; i++) {
                     (function(i){
@@ -412,6 +425,7 @@
                 }
             });
             $("#opacity6").click(function () {
+                on_off_estores(false, 'estore_cozinha')
                 var i;
                 for(i=0; i<9; i++) {
                     (function(i){
