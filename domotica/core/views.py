@@ -3,8 +3,11 @@ import time
 import paho.mqtt.client as paho
 from gpiozero import LED
 
+led = LED(17)
 
 # define callback
+
+
 def on_message(client, userdata, message):
     time.sleep(1)
     print("received message =", str(message.payload.decode("utf-8")))
@@ -27,8 +30,7 @@ def clientConnect(request):
     print("subscribing ")
     client.subscribe(place)  # subscribe
     if place == 'sala':
-        led = LED(17)
-        led.on()
+        led.toggle()
     else:
         pass
     time.sleep(1)
