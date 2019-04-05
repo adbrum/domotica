@@ -3,7 +3,9 @@ import time
 import paho.mqtt.client as paho
 from gpiozero import LED
 
-led = LED(17)
+led1 = LED(17)
+led2 = LED(27)
+led3 = LED(27)
 
 # define callback
 
@@ -30,9 +32,11 @@ def clientConnect(request):
     print("subscribing ")
     client.subscribe(place)  # subscribe
     if place == 'sala':
-        led.toggle()
-    else:
-        pass
+        led1.toggle()
+    elif place == 'quarto':
+        led2.toggle()
+    elif place == 'cozinha':
+        led3.toggle()
     time.sleep(1)
     print("publishing ")
     client.publish(place, state)  # publish
