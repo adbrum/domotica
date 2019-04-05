@@ -4,7 +4,7 @@ import paho.mqtt.client as paho
 from gpiozero import LED
 
 led1 = LED(17)
-led2 = LED(12)
+led2 = LED(18)
 led3 = LED(22)
 
 # define callback
