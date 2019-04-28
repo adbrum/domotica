@@ -21,9 +21,7 @@ def clientConnect(request):
     print('STATE: ', state)
     print('PLACE: ', place)
 
-    broker = "192.168.1.12"
-
-    broker = "192.168.1.16"
+    broker = "192.168.1.14"
 
     # create client object client1.on_publish = on_publish #assign function to callback client1.connect(broker,port) #establish connection client1.publish("house/bulb1","on")
     client = paho.Client("client-001")
