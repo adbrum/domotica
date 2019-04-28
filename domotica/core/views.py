@@ -16,11 +16,15 @@ def on_message(client, userdata, message):
 
 
 def clientConnect(request):
-    state = request.GET.get('state')
-    place = request.GET.get('place')
+    state = request.POST.get('state')
+    place = request.POST.get('place')
     print('STATE: ', state)
     print('PLACE: ', place)
+
     broker = "192.168.1.12"
+
+    broker = "192.168.1.16"
+
     # create client object client1.on_publish = on_publish #assign function to callback client1.connect(broker,port) #establish connection client1.publish("house/bulb1","on")
     client = paho.Client("client-001")
     # Bind function to callback
