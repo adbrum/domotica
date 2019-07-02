@@ -27,6 +27,7 @@ def clientConnect(request):
     if place == 'sala':
         light_1.toggle()
         state1 = light_1.value
+        print('XXXXXXXXXXXXXXXXXXXXXXXXXX: ', light_1.toggle().values())
     elif place == 'quarto':
         light_2.toggle()
         state2 = light_2.value
@@ -55,6 +56,7 @@ def clientConnect(request):
         }
 
         print('BLIND = ', blind_pos)
+        print('CONTEXT = ', context)
 
     time.sleep(1)
     return render(request, 'core/index.html')
