@@ -230,14 +230,14 @@
 
         /*SALA*/
 
-        $('.img').on({
+        /*$('.img').on({
             'click': function () {
                 var src = ($(this).attr('src') === "{% static 'images/lampada-on.jpg' %}")
                     ? "{% static 'images/lampada-off.jpg' %}"
                     : "{% static 'images/lampada-on.jpg' %}";
                 $(this).attr('src', src);
             }
-        });
+        });*/
 
         var togSrc = ["{% static 'images/lampada-on.jpg' %}", "{% static 'images/lampada-off.jpg' %}"];
 
@@ -315,16 +315,22 @@
         /*GERAL*/
 
         $('#btn_on_05').click(function () {
-            $('#light_state').attr('src', "{% static 'images/lampada-on.jpg' %}");
+            on_off_light($('#light_state').attr('src'), 'sala')
+            on_off_light($('#light_state_01').attr('src'), 'quarto')
+            on_off_light($('#light_state_02').attr('src'), 'cozinha')
+            /*$('#light_state').attr('src', "{% static 'images/lampada-on.jpg' %}");
             $('#light_state_01').attr('src', "{% static 'images/lampada-on.jpg' %}");
-            $('#light_state_02').attr('src', "{% static 'images/lampada-on.jpg' %}");
+            $('#light_state_02').attr('src', "{% static 'images/lampada-on.jpg' %}");*/
             $('#light_state_03').attr('src', "{% static 'images/lampada-on.jpg' %}");
             $('#light_state_04').attr('src', "{% static 'images/lampada-on.jpg' %}");
         });
         $('#btn_off_05').click(function () {
-            $('#light_state').attr('src', "{% static 'images/lampada-off.jpg' %}");
+            on_off_light($('#light_state').attr('src'), 'sala')
+            on_off_light($('#light_state_01').attr('src'), 'quarto')
+            on_off_light($('#light_state_02').attr('src'), 'cozinha')
+            /*$('#light_state').attr('src', "{% static 'images/lampada-off.jpg' %}");
             $('#light_state_01').attr('src', "{% static 'images/lampada-off.jpg' %}");
-            $('#light_state_02').attr('src', "{% static 'images/lampada-off.jpg' %}");
+            $('#light_state_02').attr('src', "{% static 'images/lampada-off.jpg' %}");*/
             $('#light_state_03').attr('src', "{% static 'images/lampada-off.jpg' %}");
             $('#light_state_04').attr('src', "{% static 'images/lampada-off.jpg' %}");
         });
@@ -373,7 +379,6 @@
                         var pluto = $('#estore_state_01').css('opacity');
                         $("#estore_state_01").css("opacity", parseFloat(pippo) + 0.1);
                         $("#estore_state_01").css("opacity", parseFloat(pluto) - 0.1);
-
                         console.log(pippo + 0.1);
                     }, 500*i);
                 })(i);
@@ -405,7 +410,6 @@
                         var pluto = $('#estore_state_02').css('opacity');
                         $("#estore_state_02").css("opacity", parseFloat(pippo) + 0.1);
                         $("#estore_state_02").css("opacity", parseFloat(pluto) - 0.1);
-
                         console.log(pippo + 0.1);
                     }, 500*i);
                 })(i);
