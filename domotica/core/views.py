@@ -10,12 +10,15 @@ blind_1up = LED(17)
 blind_1dw = LED(18)
 
 blind_pos = 0
+context = {}
 
 def on_message(client, userdata, message):
     time.sleep(1)
     print("received message =", str(message.payload.decode("utf-8")))
 
 def clientConnect(request):
+    global blind_pos
+    global context
     state = request.GET.get('state')
     place = request.GET.get('place')
     print('STATE: ', state)
@@ -23,13 +26,15 @@ def clientConnect(request):
 
     if place == 'sala':
         light_1.toggle()
+        state1 = light_1.value
     elif place == 'quarto':
         light_2.toggle()
+        state2 = light_2.value
     elif place == 'cozinha':
         light_3.toggle()
+        state3 = light_3.value
 
     elif place == 'estore_sala':
-        global blind_pos
 
         if (state == 'true' and blind_pos < 100)  and blind_1dw.value == 0:
             blind_1up.on()
@@ -37,12 +42,17 @@ def clientConnect(request):
             blind_1up.off()
             blind_pos = (blind_pos + 25)
 
-
         elif (state == 'false' and blind_pos > 0) and blind_1up.value == 0:
             blind_1dw.on()
             time.sleep(2)
             blind_1dw.off()
             blind_pos = (blind_pos - 25)
+
+        context = {
+            state1: light_1.value,
+            state2: light_2.value,
+            state3: light_3.value
+        }
 
         print('BLIND = ', blind_pos)
 
@@ -54,7 +64,7 @@ def index(request):
 
 def lighting(request):
     print(request)
-    return render(request, 'core/lighting.html')
+    return render(request, 'core/lighting.html', context)
 
 def surveillance(request):
     print(request)
