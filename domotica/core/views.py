@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import time
-from gpiozero import LED
+#from gpiozero import LED
 
 led1 = LED(17)
 led2 = LED(18)
