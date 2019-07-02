@@ -31,14 +31,14 @@ def clientConnect(request):
     elif place == 'estore_sala':
         global blind_pos
 
-        if state == 'true' or blind_pos < 100:
+        if (state == 'true' or blind_pos < 100)  and blind_1dw.value == 0:
             blind_1up.on()
             sleep(2)
             blind_1up.off()
             blind_pos = (blind_pos + 25)
 
 
-        elif state == 'false' or blind_pos >= 100:
+        elif (state == 'false' or blind_pos >= 100) and blind_1up.value == 0:
             blind_1dw.on()
             sleep(2)
             blind_1dw.off()
