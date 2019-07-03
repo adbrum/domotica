@@ -50,9 +50,9 @@ def clientConnect(request):
             blind_pos = (blind_pos - 25)
 
     context = {
-        state1: light_1.value,
-        state2: light_2.value,
-        state3: light_3.value
+        "state1": light_1.value,
+        "state2": light_2.value,
+        "state3": light_3.value
     }
 
     #print('state1: ', light_2.value)
