@@ -49,16 +49,16 @@ def clientConnect(request):
             blind_1dw.off()
             blind_pos = (blind_pos - 25)
 
-        context = {
-            state1: light_1.value,
-            state2: light_2.value,
-            state3: light_3.value
-        }
+    context = {
+        state1: light_1.value,
+        state2: light_2.value,
+        state3: light_3.value
+    }
 
-        print('state1: ', light_2.value)
-        print('BLIND = ', blind_pos)
-        for k, v in context.items():
-            print('CONTEXT = ', v)
+    print('state1: ', light_2.value)
+    print('BLIND = ', blind_pos)
+    for k, v in context.items():
+        print('CONTEXT = ', v)
 
     time.sleep(1)
     return render(request, 'core/index.html')
