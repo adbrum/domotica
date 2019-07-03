@@ -28,7 +28,6 @@ def clientConnect(request):
         light_1.toggle()
         state1 = light_1.value
         print('toggle: ', light_1.toggle())
-        print('state1: ', light_1.value)
     elif place == 'quarto':
         light_2.toggle()
         state2 = light_2.value
@@ -55,7 +54,7 @@ def clientConnect(request):
             state2: light_2.value,
             state3: light_3.value
         }
-
+        print('state1: ', light_1.value)
         print('BLIND = ', blind_pos)
         for i in context:
             print('CONTEXT = ', i)
