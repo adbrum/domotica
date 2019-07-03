@@ -17,6 +17,7 @@ def on_message(client, userdata, message):
     print("received message =", str(message.payload.decode("utf-8")))
 
 def clientConnect(request):
+    state = ''
     global blind_pos
     global context
     state = request.GET.get('state')
@@ -27,7 +28,6 @@ def clientConnect(request):
     if place == 'sala':
         light_1.toggle()
         state1 = light_1.value
-        print('toggle: ', light_1.toggle())
     elif place == 'quarto':
         light_2.toggle()
         state2 = light_2.value
@@ -54,7 +54,8 @@ def clientConnect(request):
             state2: light_2.value,
             state3: light_3.value
         }
-        print('state1: ', light_1.value)
+
+        print('state1: ', light_2.value)
         print('BLIND = ', blind_pos)
         for i in context:
             print('CONTEXT = ', i)
