@@ -57,7 +57,8 @@ def clientConnect(request):
         }
 
         print('BLIND = ', blind_pos)
-        print('CONTEXT = ', context)
+        for i in context:
+            print('CONTEXT = ', i)
 
     time.sleep(1)
     return render(request, 'core/index.html')
