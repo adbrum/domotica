@@ -55,10 +55,10 @@ def clientConnect(request):
         state3: light_3.value
     }
 
-    print('state1: ', light_2.value)
-    print('BLIND = ', blind_pos)
-    for k, v in context.items():
-        print('CONTEXT = ', v)
+    #print('state1: ', light_2.value)
+    #print('BLIND = ', blind_pos)
+    for key, value in context.items():
+        print(key, ":", value)
 
     time.sleep(1)
     return render(request, 'core/index.html')
