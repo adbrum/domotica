@@ -65,8 +65,7 @@ def clientConnect(request):
 
     #print('state1: ', light_2.value)
     #print('BLIND = ', blind_pos)
-    #for key, value in context.items():
-#        print(key, ":", value)
+
 
     time.sleep(1)
     return render(request, 'core/index.html')
@@ -81,6 +80,10 @@ def lighting(request):
         "state2": state2,
         "state3": state3
     }
+
+    for key, value in context.items():
+        print(key, ":", value)
+
     return render(request, 'core/lighting.html', context)
 
 def surveillance(request):
