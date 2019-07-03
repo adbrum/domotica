@@ -12,12 +12,17 @@ gunicorn==19.9.0
 more-itertools==7.0.0
 paho-mqtt==1.4.0
 pathlib2==2.3.3
+pigpio==1.42
+pkg-resources==0.0.0
 pluggy==0.9.0
+psycopg2==2.7.7
 py==1.8.0
 pycodestyle==2.5.0
 pytest==4.4.0
 python-decouple==3.1
 pytz==2018.9
+RPi.GPIO==0.6.5
+RPIO==0.10.0
 six==1.12.0
 sqlparse==0.3.0
 static3==0.7.0

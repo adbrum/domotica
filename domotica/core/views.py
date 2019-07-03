@@ -57,14 +57,14 @@ def clientConnect(request):
             blind_1dw.off()
             blind_pos = (blind_pos - 25)
 
-    ''' context = {
-        "state1": light_1.value,
-        "state2": light_2.value,
-        "state3": light_3.value
-    } '''
+    context = {
+        "state1": state1,
+        "state2": state2,
+        "state3": state3
+    }
 
-    #print('state1: ', light_2.value)
-    #print('BLIND = ', blind_pos)
+    for key, value in context.items():
+        print(key, ":", value)
 
 
     time.sleep(1)
@@ -75,16 +75,6 @@ def index(request):
 
 def lighting(request):
     print(request)
-
-    context = {
-        "state1": state1,
-        "state2": state2,
-        "state3": state3
-    }
-
-    for key, value in context.items():
-        print(key, ":", value)
-
     return render(request, 'core/lighting.html',
                 {
                 "state1": state1,
