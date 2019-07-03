@@ -228,23 +228,42 @@
 {% endblock content %}
 
 {% block javascript %}
-<script type="text/javascript">
-    window.onload = function(){
-        var status = "{{context}}"
-        //var status = "{{context}}".replace(/&quot;/g,"\"")
-        for(var key in status) {
-            console.log('XXXXXXXXXXXXXXXXX', key)
-        }
-        //var status = "{{context}}"
-        console.log('ZZZZZZZZZZZZZZZZZZZ', status)
-        }
-
-</script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
 
+        if ("{{ state1 | safe }}" == "1")
+        {
+            console.log('ON')
+            document.getElementById('light_state').src = "{% static 'images/lampada-on.jpg' %}";
+        }else {
+            console.log('OFF')
+            document.getElementById('light_state').src = "{% static 'images/lampada-off.jpg' %}";
+        }
 
+        if ("{{ state2 | safe }}" == "1")
+        {
+            console.log('ON')
+            document.getElementById('light_state_01').src = "{% static 'images/lampada-on.jpg' %}";
+        }else {
+            console.log('OFF')
+            document.getElementById('light_state_01').src = "{% static 'images/lampada-off.jpg' %}";
+        }
 
+        if ("{{ state3 | safe }}" == "1")
+        {
+            console.log('ON')
+            document.getElementById('light_state_03').src = "{% static 'images/lampada-on.jpg' %}";
+        }else {
+            console.log('OFF')
+            document.getElementById('light_state_03').src = "{% static 'images/lampada-off.jpg' %}";
+        }
+
+        if ("{{ blind_pos | safe }}" == "1")
+        {
+            console.log('blind_pos ON')
+        }else {
+            console.log('blind_pos OFF')
+        }
         /*SALA*/
 
         /*$('.img').on({
@@ -288,7 +307,8 @@
         function on_off_light(state, place){
             var state;
 
-            if ((state === "{% static 'images/lampada-on.jpg' %}") ) {
+            if ((state === "{% static 'images/lampada-on.jpg' %}"))
+            {
                 console.log('ON')
                 state = true;
             }else {

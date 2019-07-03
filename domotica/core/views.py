@@ -75,6 +75,7 @@ def index(request):
 
 def lighting(request):
     print(request)
+
     context = {
         "state1": state1,
         "state2": state2,
@@ -84,7 +85,13 @@ def lighting(request):
     for key, value in context.items():
         print(key, ":", value)
 
-    return render(request, 'core/lighting.html', context)
+    return render(request, 'core/lighting.html',
+                {
+                "state1": state1,
+                "state2": state2,
+                "state3": state3,
+                "blind_pos": blind_pos
+                })
 
 def surveillance(request):
     print(request)
