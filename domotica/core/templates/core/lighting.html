@@ -85,6 +85,9 @@
                 <div class="card-block">
                     <h2 class="card-title  text-center">
                         Cozinha
+                        {% for item in {{ context }}%}
+                            item
+                        {%endfor%}
                     </h2>
                 </div>
                 <div class="row">
@@ -221,14 +224,13 @@
                 </div>
             </div>
         </div>
-        {{ context }}
     </div>
 {% endblock content %}
 
 {% block javascript %}
 <script type="text/javascript">
     window.onload = function(){
-        var status = "{{context|safe}}"
+        var status = "{{context}}"
         //var status = "{{context}}".replace(/&quot;/g,"\"")
         for(var key in status) {
             console.log('XXXXXXXXXXXXXXXXX', key)

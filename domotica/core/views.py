@@ -10,7 +10,7 @@ blind_1up = LED(17)
 blind_1dw = LED(18)
 
 blind_pos = 0
-context = {}
+context = []
 
 def on_message(client, userdata, message):
     time.sleep(1)
@@ -49,11 +49,11 @@ def clientConnect(request):
             blind_1dw.off()
             blind_pos = (blind_pos - 25)
 
-    context = {
+    context = [{
         "state1": light_1.value,
         "state2": light_2.value,
         "state3": light_3.value
-    }
+    }]
 
     #print('state1: ', light_2.value)
     #print('BLIND = ', blind_pos)
