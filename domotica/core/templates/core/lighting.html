@@ -221,15 +221,17 @@
                 </div>
             </div>
         </div>
+        {{ context }}
     </div>
 {% endblock content %}
 
 {% block javascript %}
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
-        var status = "{{context}}".replace(/&quot;/g,"\"")
-        console.log('XXXXXXXXXXXXXXXXX', status)
-        console.log('ZZZZZZZZZZZZZZZ', "{{context}}")
+        //var status = "{{context}}".replace(/&quot;/g,"\"")
+        var status = "{{context}}"
+        console.log('XXXXXXXXXXXXXXXXX', status[0])
+
 
         /*SALA*/
 
