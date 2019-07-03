@@ -141,11 +141,11 @@
                         <br>
                         <br>
                         <div>
-                            <button type="button" id="btn_on_03" class="btn btn-success btn-lg btn-block" disabled>Ligar</button>
+                            <button type="button" id="btn_on_03" class="btn btn-success btn-lg btn-block">Ligar</button>
                         </div>
                         <br>
                         <div>
-                            <button type="button" id="btn_off_03" class="btn btn-danger btn-lg btn-block"disabled >Desligar
+                            <button type="button" id="btn_off_03" class="btn btn-danger btn-lg btn-block">Desligar
                             </button>
                         </div>
                     </div>
@@ -175,11 +175,11 @@
                         <br>
                         <br>
                         <div>
-                            <button type="button" id="btn_on_04" class="btn btn-success btn-lg btn-block" disabled>Ligar</button>
+                            <button type="button" id="btn_on_04" class="btn btn-success btn-lg btn-block">Ligar</button>
                         </div>
                         <br>
                         <div>
-                            <button type="button" id="btn_off_04" class="btn btn-danger btn-lg btn-block" disabled>Desligar
+                            <button type="button" id="btn_off_04" class="btn btn-danger btn-lg btn-block">Desligar
                             </button>
                         </div>
                     </div>
@@ -202,12 +202,12 @@
                     </div>
                     <div class="col-md-8">
                         <div>
-                            <button type="button" id="btn_on_05" class="btn btn-success btn-lg btn-block"disabled>Ligar Tudo
+                            <button type="button" id="btn_on_05" class="btn btn-success btn-lg btn-block">Ligar Tudo
                             </button>
                         </div>
                         <br>
                         <div>
-                            <button type="button" id="btn_off_05" class="btn btn-danger btn-lg btn-block" disabled>Desligar Tudo
+                            <button type="button" id="btn_off_05" class="btn btn-danger btn-lg btn-block">Desligar Tudo
                             </button>
                         </div>
                         <br>
@@ -228,50 +228,22 @@
 {% endblock content %}
 
 {% block javascript %}
+<script type="text/javascript">
+    window.onload = function(){
+        var status = "{{context}}"
+        //var status = "{{context}}".replace(/&quot;/g,"\"")
+        for(var key in status) {
+            console.log('XXXXXXXXXXXXXXXXX', key)
+        }
+        //var status = "{{context}}"
+        console.log('ZZZZZZZZZZZZZZZZZZZ', status)
+        }
+
+</script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
 
-        //variáveis vinda do django, estado das portas no pi
-        var state1 = "{{ state1 | safe }}"
-        var state2 = "{{ state2 | safe }}"
-        var state3 = "{{ state3 | safe }}"
-        var blind_pos = "{{ blind_pos | safe }}"
 
-        if ( state1 === "1")
-        {
-            console.log('ON')
-            document.getElementById('light_state').src = "{% static 'images/lampada-on.jpg' %}";
-        }else {
-            console.log('OFF')
-            document.getElementById('light_state').src = "{% static 'images/lampada-off.jpg' %}";
-        }
-
-        if (state2 === "1")
-        {
-            console.log('ON')
-            document.getElementById('light_state_01').src = "{% static 'images/lampada-on.jpg' %}";
-        }else {
-            console.log('OFF')
-            state2 = "0"
-            document.getElementById('light_state_01').src = "{% static 'images/lampada-off.jpg' %}";
-        }
-
-        if (state3 === "1")
-        {
-            console.log('ON')
-            document.getElementById('light_state_03').src = "{% static 'images/lampada-on.jpg' %}";
-        }else {
-            console.log('OFF')
-            document.getElementById('light_state_03').src = "{% static 'images/lampada-off.jpg' %}";
-        }
-
-        if (blind_pos === "1")
-        {
-            console.log('blind_pos ON')
-        }else {
-            console.log('blind_pos OFF')
-        }
-    //},3000)
 
         /*SALA*/
 
@@ -316,8 +288,7 @@
         function on_off_light(state, place){
             var state;
 
-            if ((state === "{% static 'images/lampada-on.jpg' %}"))
-            {
+            if ((state === "{% static 'images/lampada-on.jpg' %}") ) {
                 console.log('ON')
                 state = true;
             }else {
@@ -380,6 +351,7 @@
             $('#light_state_03').attr('src', "{% static 'images/lampada-off.jpg' %}");
             $('#light_state_04').attr('src', "{% static 'images/lampada-off.jpg' %}");
         });
+
 
         function changeOpacity() {
             $("#opacity").click(function () {
@@ -489,7 +461,7 @@
 
         $(document).bind('keydown', function (e) {
             //alert(e.type + ': ' + e.which);
-            if (e.which === 49) {
+            if (e.which === 49) { 
                 var src = ($('#light_state').attr('src') === "{% static 'images/lampada-on.jpg' %}")
                     ? "{% static 'images/lampada-off.jpg' %}"
                     : "{% static 'images/lampada-on.jpg' %}";
