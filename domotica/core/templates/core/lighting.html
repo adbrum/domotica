@@ -252,17 +252,16 @@
             document.getElementById('light_state_01').src = "{% static 'images/lampada-on.jpg' %}";
         }else {
             console.log('OFF')
-            state2 = "0"
             document.getElementById('light_state_01').src = "{% static 'images/lampada-off.jpg' %}";
         }
 
         if (state3 === "1")
         {
             console.log('ON')
-            document.getElementById('light_state_03').src = "{% static 'images/lampada-on.jpg' %}";
+            document.getElementById('light_state_02').src = "{% static 'images/lampada-on.jpg' %}";
         }else {
             console.log('OFF')
-            document.getElementById('light_state_03').src = "{% static 'images/lampada-off.jpg' %}";
+            document.getElementById('light_state_02').src = "{% static 'images/lampada-off.jpg' %}";
         }
 
         if (blind_pos === "1")
@@ -271,18 +270,6 @@
         }else {
             console.log('blind_pos OFF')
         }
-    //},3000)
-
-        /*SALA*/
-
-        /*$('.img').on({
-            'click': function () {
-                var src = ($(this).attr('src') === "{% static 'images/lampada-on.jpg' %}")
-                    ? "{% static 'images/lampada-off.jpg' %}"
-                    : "{% static 'images/lampada-on.jpg' %}";
-                $(this).attr('src', src);
-            }
-        });*/
 
         var togSrc = ["{% static 'images/lampada-on.jpg' %}", "{% static 'images/lampada-off.jpg' %}"];
 
@@ -291,7 +278,6 @@
                 ? "{% static 'images/lampada-off.jpg' %}"
                 : "{% static 'images/lampada-on.jpg' %}";
             $('#light_state').attr('src', src);
-            //$('#light_state').attr('src', togSrc.reverse()[0]);
             on_off_light($('#light_state').attr('src'), 'sala')
         });
 
@@ -300,7 +286,6 @@
                 ? "{% static 'images/lampada-off.jpg' %}"
                 : "{% static 'images/lampada-on.jpg' %}";
             $('#light_state_01').attr('src', src);
-            //$('#light_state_01').attr('src', togSrc.reverse()[0]);
             on_off_light($('#light_state_01').attr('src'), 'quarto')
         });
 
@@ -309,7 +294,6 @@
                 ? "{% static 'images/lampada-off.jpg' %}"
                 : "{% static 'images/lampada-on.jpg' %}";
             $('#light_state_02').attr('src', src);
-            //$('#light_state_02').attr('src', togSrc.reverse()[0]);
             on_off_light($('#light_state_02').attr('src'), 'cozinha')
         });
 
@@ -489,46 +473,46 @@
 
         $(document).bind('keydown', function (e) {
             //alert(e.type + ': ' + e.which);
-            if (e.which === 49) {
+            if (e.which === 49 | e.which === 97) {
                 var src = ($('#light_state').attr('src') === "{% static 'images/lampada-on.jpg' %}")
                     ? "{% static 'images/lampada-off.jpg' %}"
                     : "{% static 'images/lampada-on.jpg' %}";
                 $('#light_state').attr('src', src);
                 on_off_light($('#light_state').attr('src'), 'sala')
             }
-            if (e.which === 50) {
+            if (e.which === 50 | e.which === 98) {
                 $("#opacity").trigger('click');
             }
-            if (e.which === 51) {
+            if (e.which === 51 | e.which === 99) {
                 $("#opacity2").trigger('click');
             }
-            if (e.which === 52) {
+            if (e.which === 52 | e.which === 100) {
                 var src = ($('#light_state_01').attr('src') === "{% static 'images/lampada-on.jpg' %}")
                     ? "{% static 'images/lampada-off.jpg' %}"
                     : "{% static 'images/lampada-on.jpg' %}";
                 $('#light_state_01').attr('src', src);
                 on_off_light($('#light_state_01').attr('src'), 'quarto')
             }
-            if (e.which === 53) {
+            if (e.which === 53 | e.which === 101) {
                 $("#opacity3").trigger('click');
             }
-            if (e.which === 54) {
+            if (e.which === 54 | e.which === 102) {
                 $("#opacity4").trigger('click');
             }
-            if (e.which === 55) {
+            if (e.which === 55 | e.which === 103) {
                 var src = ($('#light_state_02').attr('src') === "{% static 'images/lampada-on.jpg' %}")
                     ? "{% static 'images/lampada-off.jpg' %}"
                     : "{% static 'images/lampada-on.jpg' %}";
                 $('#light_state_02').attr('src', src);
                 on_off_light($('#light_state_02').attr('src'), 'cozinha')
             }
-            if (e.which === 56) {
+            if (e.which === 56 | e.which === 104) {
                 $("#opacity5").trigger('click');
             }
-            if (e.which === 57) {
+            if (e.which === 57 | e.which === 105) {
                 $("#opacity6").trigger('click');
             }
-            if (e.which === 48) {
+            if (e.which === 48 | e.which === 106) {
                 $("#btn_back").trigger('click');
             }
         });

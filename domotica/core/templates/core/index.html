@@ -39,19 +39,17 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="">
-
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="">
                             <img id="light_state" src="{% static 'images/porta-entrada.jpg' %}" style="height: 220px"/>
                             {% comment %}<img class="card-img-top" alt="Bootstrap Thumbnail First" width="10px" height="370px"
-                                 src="https://mywindow.pt/images/produto/porta-entrada-alum.jpg"/>{% endcomment %}
+                                src="https://mywindow.pt/images/produto/porta-entrada-alum.jpg"/>{% endcomment %}
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="">
-
                         </div>
                     </div>
                 </div>
@@ -70,9 +68,9 @@
                     <div class="col-md-6">
                         <div>
                             <img id="light_state" src="{% static 'images/videovigilancia.jpg' %}"
-                                 style="height: 220px"/>
+                                style="height: 220px"/>
                             {% comment %}<img class="card-img-top mw-100" alt="Bootstrap Thumbnail First"
-                                 src="http://www.scvpti.pt/wp-content/uploads/2016/07/201407211604-videovigilancia.jpg"/>{% endcomment %}
+                                src="http://www.scvpti.pt/wp-content/uploads/2016/07/201407211604-videovigilancia.jpg"/>{% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -100,7 +98,7 @@
                     <div>
                         <img id="light_state" src="{% static 'images/aviso_medic.png' %}" style="height: 220px"/>
                         {% comment %}<img class="card-img-top" alt="Bootstrap Thumbnail First"
-                                 src="https://cdn.es.tiendas.com/images/?url=rPRb9CenFBqcWcNXglsYuabGLQJd5X%2BmOAKTQOCRtgn%2BRnVFaIXGu5%2BGdK2iuz%2Bv1%2FC361LA9dSkRZY03%2FjIEAhRWXrj9MvwQP4rq24osEg%3D&w=300&h=300&t=letterbox&trim=1&bg=white"/>{% endcomment %}
+                                src="https://cdn.es.tiendas.com/images/?url=rPRb9CenFBqcWcNXglsYuabGLQJd5X%2BmOAKTQOCRtgn%2BRnVFaIXGu5%2BGdK2iuz%2Bv1%2FC361LA9dSkRZY03%2FjIEAhRWXrj9MvwQP4rq24osEg%3D&w=300&h=300&t=letterbox&trim=1&bg=white"/>{% endcomment %}
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -125,12 +123,11 @@
                     <div class="">
                         <img id="light_state" src="{% static 'images/termometro.jpg' %}" style="height: 220px"/>
                         {% comment %}<img class="card-img-top" alt="Bootstrap Thumbnail First" width="10px" height="370px"
-                                 src="https://thumbs.dreamstime.com/z/icona-del-termometro-che-misura-temperatura-calda-e-fredda-86649219.jpg"/>{% endcomment %}
+                                src="https://thumbs.dreamstime.com/z/icona-del-termometro-che-misura-temperatura-calda-e-fredda-86649219.jpg"/>{% endcomment %}
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="">
-
                     </div>
                 </div>
             </div>
@@ -150,7 +147,7 @@
                     <div class="">
                         <img id="light_state" src="{% static 'images/engrenagem.png' %}" style="height: 220px"/>
                         {% comment %}<img class="card-img-top" alt="Bootstrap Thumbnail First"
-                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT64qk0qY5bJ23dQqqO9xj6rvz98McMOY1OAFqbIj8PnzYjGrVo"/>{% endcomment %}
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT64qk0qY5bJ23dQqqO9xj6rvz98McMOY1OAFqbIj8PnzYjGrVo"/>{% endcomment %}
                     </div>
                 </div>
             </div>
@@ -181,15 +178,14 @@
             });
 
             $(document).bind('keydown', function (e) {
-                if (e.which === 97) {
+                if (e.which === 49 | e.which === 97) {
                     window.location = "/iluminacao/";
                 }
-                if (e.which === 99) {
+                if (e.which === 51 | e.which === 99) {
                     window.location = "/videovigilancia/";
                 }
                 //alert(e.type + ': ' + e.which);
             });
-
         });
     </script>
 {% endblock javascript %}
