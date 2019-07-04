@@ -1,27 +1,39 @@
 {% extends "core/base.html" %}
 {% load static %}
 {% block content %}
+<style>
+.img {
+    height: 150px;
+}
+    .custom {
+    width: 100%;
+    height:80px;
+    margin: 0 auto;
+    }
+    .nav-left{
+        position: absolute;
+        left: 1%;
+    }
+    .nav-right{
+        position: absolute;
+        right: 1%;
+    }
+    .font-custom {
+        font-style: normal;
+        font-size: 2.8em !important;
+    }
+</style>
+    <nav class="custom navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="nav-left">
+            <span class="font-custom navbar-brand mb-0 h1 fa fa-home" id="home"> Principal</span>
+        </div>
+        <div class="nav-right">
+            <span class="font-custom navbar-brand mb-0 h1 fa fa-lightbulb" id="lightbulb"> Iluminação</span>
+        </div>
+    </nav>
     <div class="container-fluid" id="form_id">
-            <nav class="navbar navbar-light bg-light">
-                    <span class="navbar-brand mb-0 h1 fa fa-home text-left" id="home"> Principal</span>
-                    <span class="navbar-brand mb-0 h1 fa fa-lightbulb text-right" id="lightbulb"> Iluminação</span>
-            </nav>
-        <!-- <div class="row">
-            <div class="col-md-12">
-                <div class="jumbotron text-right row">
-                    <div class="col-md-6 text-left">
-                        <h1>
-                            <i class="fa fa-home" id="home"> Principal</i>
-                        </h1>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        <h1>
-                            <i class="fa fa-lightbulb"> 1 - Iluminação</i>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+        <br>
+        <br>
         <div class="row">
             <div class="col-md-4 card" id="sala">
                 <div class="card-block">
@@ -35,20 +47,20 @@
                             <img class="img" id="light_state" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
                         <div>
-                            <button type="button" id="btn_on" class="btn btn-warning btn-block"> 1. Ligar/Desligar
+                            <button type="button" id="btn_on" class="btn btn-warning btn-group"> 1. Ligar/Desligar
                             </button>
                         </div>
                     </div>
                     <div class="col-md-6" align="center">
                         <div id="estore_state">
-                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 220px"/>
+                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 150px"/>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <button type="button" id="opacity" class="btn btn-success btn-block">2. Abrir</button>
+                                <button type="button" id="opacity" class="btn btn-success btn-group">2. Abrir</button>
                             </div>
                             <div class="col-md-6">
-                                <button type="button" id="opacity2" class="btn btn-danger btn-block">3. Fechar</button>
+                                <button type="button" id="opacity2" class="btn btn-danger btn-group">3. Fechar</button>
                             </div>
                         </div>
                     </div>
@@ -66,20 +78,20 @@
                             <img class="img" id="light_state_01" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
                         <div>
-                            <button type="button" id="btn_on_01" class="btn btn-warning btn-block"> 4. Ligar/Desligar
+                            <button type="button" id="btn_on_01" class="btn btn-warning btn-group"> 4. Ligar/Desligar
                             </button>
                         </div>
                     </div>
                     <div class="col-md-6" align="center">
                         <div id="estore_state_01">
-                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 220px"/>
+                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 150px"/>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <button type="button" id="opacity3" class="btn btn-success btn-block">5. Abrir</button>
+                                <button type="button" id="opacity3" class="btn btn-success btn-group">5. Abrir</button>
                             </div>
                             <div class="col-md-6">
-                                <button type="button" id="opacity4" class="btn btn-danger btn-block">6. Fechar</button>
+                                <button type="button" id="opacity4" class="btn btn-danger btn-group">6. Fechar</button>
                             </div>
                         </div>
                     </div>
@@ -97,20 +109,20 @@
                             <img class="img" id="light_state_02" src="{% static 'images/lampada-off.jpg' %}"/>
                         </div>
                         <div>
-                            <button type="button" id="btn_on_02" class="btn btn-warning btn-block"> 7. Ligar/Desligar
+                            <button type="button" id="btn_on_02" class="btn btn-warning btn-group"> 7. Ligar/Desligar
                             </button>
                         </div>
                     </div>
                     <div class="col-md-6" align="center">
                         <div id="estore_state_02">
-                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 220px"/>
+                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 150px"/>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <button type="button" id="opacity5" class="btn btn-success btn-block">8. Abrir</button>
+                                <button type="button" id="opacity5" class="btn btn-success btn-group">8. Abrir</button>
                             </div>
                             <div class="col-md-6">
-                                <button type="button" id="opacity6" class="btn btn-danger btn-block">9. Fechar</button>
+                                <button type="button" id="opacity6" class="btn btn-danger btn-group">9. Fechar</button>
                             </div>
                         </div>
                     </div>
@@ -125,7 +137,7 @@
                     <div class="col-md-4 card" id="quarto_01">
                             <div class="card-block">
                                 <h2 class="card-title  text-center">
-                                    Garagem
+                                    Exterior
                                 </h2>
                             </div>
                             <div class="row d-flex justify-content-center">
@@ -134,7 +146,7 @@
                                         <img class="img" id="light_state_01" src="{% static 'images/lampada-off.jpg' %}"/>
                                     </div>
                                     <div>
-                                        <button type="button" id="btn_on_01" class="btn btn-warning btn-block"> Ligar/Desligar
+                                        <button type="button" id="btn_on_01" class="btn btn-warning btn-group"> Ligar/Desligar
                                         </button>
                                     </div>
                                 </div>
@@ -152,7 +164,7 @@
                                     <img class="img" id="light_state_01" src="{% static 'images/lampada-off.jpg' %}"/>
                                 </div>
                                 <div>
-                                    <button type="button" id="btn_on_01" class="btn btn-warning btn-block"> Ligar/Desligar
+                                    <button type="button" id="btn_on_01" class="btn btn-warning btn-group"> Ligar/Desligar
                                     </button>
                                 </div>
                             </div>
