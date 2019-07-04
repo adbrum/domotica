@@ -2,7 +2,11 @@
 {% load static %}
 {% block content %}
     <div class="container-fluid" id="form_id">
-        <div class="row">
+            <nav class="navbar navbar-light bg-light">
+                    <span class="navbar-brand mb-0 h1 fa fa-home text-left" id="home"> Principal</span>
+                    <span class="navbar-brand mb-0 h1 fa fa-lightbulb text-right" id="lightbulb"> Iluminação</span>
+            </nav>
+        <!-- <div class="row">
             <div class="col-md-12">
                 <div class="jumbotron text-right row">
                     <div class="col-md-6 text-left">
@@ -17,7 +21,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-4 card" id="sala">
                 <div class="card-block">
@@ -85,9 +89,6 @@
                 <div class="card-block">
                     <h2 class="card-title  text-center">
                         Cozinha
-                        {% for item in context %}
-                            item
-                        {%endfor%}
                     </h2>
                 </div>
                 <div class="row">
@@ -120,110 +121,79 @@
     <br>
     <br>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4 card" id="exterior">
-                <div class="card-block">
-                    <h2 class="card-title  text-center">
-                        Exterior
-                    </h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-3" style="height: 370px;">
-                        <div>
+            <div class="row">
+                    <div class="col-md-4 card" id="quarto_01">
+                            <div class="card-block">
+                                <h2 class="card-title  text-center">
+                                    Garagem
+                                </h2>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-4" align="center">
+                                    <div>
+                                        <img class="img" id="light_state_01" src="{% static 'images/lampada-off.jpg' %}"/>
+                                    </div>
+                                    <div>
+                                        <button type="button" id="btn_on_01" class="btn btn-warning btn-block"> Ligar/Desligar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-md-4 card" id="quarto_01">
+                        <div class="card-block">
+                            <h2 class="card-title  text-center">
+                                Garagem
+                            </h2>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-4" align="center">
+                                <div>
+                                    <img class="img" id="light_state_01" src="{% static 'images/lampada-off.jpg' %}"/>
+                                </div>
+                                <div>
+                                    <button type="button" id="btn_on_01" class="btn btn-warning btn-block"> Ligar/Desligar
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div>
-                            <img class="img" id="light_state_03" src="{% static 'images/lampada-off.jpg' %}"/>
+                    <div class="col-md-4 card" id="garagem">
+                            <div class="card-block">
+                                <h2 class="card-title  text-center">
+                                    Geral
+                                </h2>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-2" style="height: 370px;">
+                                    <div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div>
+                                        <button type="button" id="btn_on_05" class="btn btn-success btn-lg btn-block"disabled>Ligar Tudo
+                                        </button>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button type="button" id="btn_off_05" class="btn btn-danger btn-lg btn-block" disabled>Desligar Tudo
+                                        </button>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button type="button" id="btn_back" class="btn btn-primary btn-lg btn-block">0. Voltar
+                                            Principal
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2" style="height: 370px;">
+                                    <div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <div>
-                            <button type="button" id="btn_on_03" class="btn btn-success btn-lg btn-block" disabled>Ligar</button>
-                        </div>
-                        <br>
-                        <div>
-                            <button type="button" id="btn_off_03" class="btn btn-danger btn-lg btn-block"disabled >Desligar
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-3" style="height: 370px;">
-                        <div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 card" id="garagem">
-                <div class="card-block">
-                    <h2 class="card-title  text-center">
-                        Garagem
-                    </h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-3" style="height: 370px;">
-                        <div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div>
-                            <img class="img" id="light_state_04" src="{% static 'images/lampada-off.jpg' %}"/>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <div>
-                            <button type="button" id="btn_on_04" class="btn btn-success btn-lg btn-block" disabled>Ligar</button>
-                        </div>
-                        <br>
-                        <div>
-                            <button type="button" id="btn_off_04" class="btn btn-danger btn-lg btn-block" disabled>Desligar
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-3" style="height: 370px;">
-                        <div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 card" id="garagem">
-                <div class="card-block">
-                    <h2 class="card-title  text-center">
-                        Geral
-                    </h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-2" style="height: 370px;">
-                        <div>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div>
-                            <button type="button" id="btn_on_05" class="btn btn-success btn-lg btn-block"disabled>Ligar Tudo
-                            </button>
-                        </div>
-                        <br>
-                        <div>
-                            <button type="button" id="btn_off_05" class="btn btn-danger btn-lg btn-block" disabled>Desligar Tudo
-                            </button>
-                        </div>
-                        <br>
-                        <div>
-                            <button type="button" id="btn_back" class="btn btn-primary btn-lg btn-block">0. Voltar
-                                Principal
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-2" style="height: 370px;">
-                        <div>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
     </div>
 {% endblock content %}
 
