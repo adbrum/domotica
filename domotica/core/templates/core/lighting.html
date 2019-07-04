@@ -237,7 +237,6 @@
         var state3 = "{{ state3 | safe }}"
         var blind_pos = "{{ blind_pos | safe }}"
 
-<<<<<<< HEAD
         if ( state1 === "1")
         {
             console.log('ON')
@@ -271,7 +270,7 @@
         }else {
             console.log('blind_pos OFF')
         }
-=======
+        
         /*$('.img').on({
             'click': function () {
                 var src = ($(this).attr('src') === "{% static 'images/lampada-on.jpg' %}")
@@ -280,7 +279,6 @@
                 $(this).attr('src', src);
             }
         });*/
->>>>>>> django-2.2.3
 
         var togSrc = ["{% static 'images/lampada-on.jpg' %}", "{% static 'images/lampada-off.jpg' %}"];
 
@@ -359,11 +357,11 @@
             on_off_light($('#light_state').attr('src'), 'sala')
             on_off_light($('#light_state_01').attr('src'), 'quarto')
             on_off_light($('#light_state_02').attr('src'), 'cozinha')
-<<<<<<< HEAD
+
             $('#light_state').attr('src', "{% static 'images/lampada-on.jpg' %}");
-=======
+
             /*$('#light_state').attr('src', "{% static 'images/lampada-on.jpg' %}");
->>>>>>> django-2.2.3
+
             $('#light_state_01').attr('src', "{% static 'images/lampada-on.jpg' %}");
             $('#light_state_02').attr('src', "{% static 'images/lampada-on.jpg' %}");*/
             $('#light_state_03').attr('src', "{% static 'images/lampada-on.jpg' %}");
@@ -373,11 +371,11 @@
             on_off_light($('#light_state').attr('src'), 'sala')
             on_off_light($('#light_state_01').attr('src'), 'quarto')
             on_off_light($('#light_state_02').attr('src'), 'cozinha')
-<<<<<<< HEAD
+
             $('#light_state').attr('src', "{% static 'images/lampada-off.jpg' %}");
-=======
+
             /*$('#light_state').attr('src', "{% static 'images/lampada-off.jpg' %}");
->>>>>>> django-2.2.3
+
             $('#light_state_01').attr('src', "{% static 'images/lampada-off.jpg' %}");
             $('#light_state_02').attr('src', "{% static 'images/lampada-off.jpg' %}");*/
             $('#light_state_03').attr('src', "{% static 'images/lampada-off.jpg' %}");
@@ -432,6 +430,7 @@
                 })(i);
                 }
             });
+            
             $("#opacity4").click(function () {
                 on_off_estores(false, 'estore_quarto')
                 var i;
@@ -463,6 +462,7 @@
                 })(i);
                 }
             });
+            
             $("#opacity6").click(function () {
                 on_off_estores(false, 'estore_cozinha')
                 var i;
