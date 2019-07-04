@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import time
-#from gpiozero import LED
+from gpiozero import LED
 
 light_1 = LED(16)
 light_2 = LED(20)
@@ -10,14 +10,10 @@ blind_1up = LED(17)
 blind_1dw = LED(18)
 
 blind_pos = 0
-<<<<<<< HEAD
 #context = {}
-
 state1 = 0
 state2 = 0
 state3 = 0
-=======
->>>>>>> django-2.2.3
 
 def on_message(client, userdata, message):
     time.sleep(1)
@@ -43,7 +39,6 @@ def clientConnect(request):
         light_2.toggle()
         state2 = light_2.value
     elif place == 'cozinha':
-<<<<<<< HEAD
         light_3.toggle()
         state3 = light_3.value
 
@@ -70,7 +65,6 @@ def clientConnect(request):
     for key, value in context.items():
         print(key, ":", value)
 
-=======
         led3.toggle()
 
     elif place == 'estore_sala':
@@ -90,7 +84,6 @@ def clientConnect(request):
             blind_pos = (blind_pos - 25)
 
         print('BLIND = ', blind_pos)
->>>>>>> django-2.2.3
 
     time.sleep(1)
     return render(request, 'core/index.html')
@@ -100,7 +93,7 @@ def index(request):
 
 def lighting(request):
     print(request)
-<<<<<<< HEAD
+
     return render(request, 'core/lighting.html',
                 {
                 "state1": state1,
@@ -108,15 +101,12 @@ def lighting(request):
                 "state3": state3,
                 "blind_pos": blind_pos
                 })
-=======
     return render(request, 'core/lighting.html')
->>>>>>> django-2.2.3
 
 def surveillance(request):
     print(request)
     return render(request, 'core/surveillance.html')
 
-<<<<<<< HEAD
 def cam01(request):
     print(request)
     return render(request, 'core/cam_01.html')
