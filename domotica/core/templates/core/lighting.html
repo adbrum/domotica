@@ -52,8 +52,8 @@
                         </div>
                     </div>
                     <div class="col-md-6" align="center">
-                        <div id="estore_state">
-                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 150px"/>
+                        <div >
+                            <img id="estore_state" src="{% static 'images/estore_0.jpg' %}" style="height: 150px" alt="estore_state"/>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -84,7 +84,7 @@
                     </div>
                     <div class="col-md-6" align="center">
                         <div id="estore_state_01">
-                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 150px"/>
+                            <img src="{% static 'images/estore_0.jpg' %}" style="height: 150px"/>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -115,7 +115,7 @@
                     </div>
                     <div class="col-md-6" align="center">
                         <div id="estore_state_02">
-                            <img src="{% static 'images/estore_02.jpg' %}" style="height: 150px"/>
+                            <img src="{% static 'images/estore_0.jpg' %}" style="height: 150px"/>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -206,13 +206,12 @@
                         </div>
                 </div>
             </div>
-    </div>
+    </div>ss
 {% endblock content %}
 
 {% block javascript %}
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
-
         //variáveis vinda do django, estado das portas no pi
         var state1 = "{{ state1 | safe }}"
         var state2 = "{{ state2 | safe }}"
@@ -298,13 +297,50 @@
             });
         }
 
-        function on_off_estores(state, place){
+        //var blind_pos = '';
+        /*function on_off_estores(state, place){
             $.ajax({
                 url: {% url 'clientConnect' %},
                 type: 'GET',
                 data: {"state": state, "place": place},
-            });
-        }
+                cache: false,
+                success: function(data){
+                    $.ajax({
+                        url: {% url 'blindPosition' %},
+                        type: 'GET',
+                        data: {"state": state, "place": place},
+                        cache: false,
+                            success: function(data){
+                                blind_pos = data.blind_pos;
+                            }
+                        });
+                }
+                });
+            };*/
+            function on_off_estores(state, place){
+                $.ajax({
+                    url: {% url 'clientConnect' %},
+                    type: 'GET',
+                    data: {"state": state, "place": place},
+                    });
+                };
+
+                function on_off_estores2(state, place){
+                    
+                            $.ajax({
+                                url: {% url 'blindPosition' %},
+                                type: 'GET',
+                                type: 'GET',
+                                data: {"state": state, "place": place},
+                                //cache: false,
+                                    success: function(data){
+                                        blind_pos = data.blind_pos;
+                                    }
+                                });
+                        
+                        
+                    };
+
 
         /*EXTERIOR*/
 
@@ -347,36 +383,64 @@
             $('#light_state_04').attr('src', "{% static 'images/lampada-off.jpg' %}");
         });
 
+        console.log('XXXXXXXXXXXXXXXXX: ', blind_pos)
+
         function changeOpacity() {
             $("#opacity").click(function () {
+                console.log('BLIND POSITION YY : ', blind_pos)
                 on_off_estores(true, 'estore_sala')
-                var i;
-                for(i=0; i<9; i++) {
-                    (function(i){
-                        setTimeout(function(){
-                        var pippo = $('#estore_state').css('opacity');
-                        var pluto = $('#estore_state').css('opacity');
-                        $("#estore_state").css("opacity", parseFloat(pippo) + 0.1);
-                        $("#estore_state").css("opacity", parseFloat(pluto) - 0.1);
-                        console.log(pippo + 0.1);
-                    }, 500*i);
-                })(i);
+                on_off_estores2(true, 'estore_sala')
+
+                if (blind_pos == "0")
+                {
+                    console.log('BLIND POSITION 0: ', blind_pos);
+                    $('#estore_state').attr('src', "{% static 'images/estore_0.jpg' %}")
+                }else if (blind_pos == "25")
+                {
+                    console.log('BLIND POSITION 25: ', blind_pos);
+                    $('#estore_state').attr('src', "{% static 'images/estore_25.jpg' %}")
+                }else if (blind_pos == "50")
+                {
+                    console.log('BLIND POSITION 50: ', blind_pos);
+                    $('#estore_state').attr('src', "{% static 'images/estore_50.jpg' %}")
+                }else if (blind_pos == "75")
+                {
+                    console.log('BLIND POSITION 75: ', blind_pos);
+                    $('#estore_state').attr('src', "{% static 'images/estore_75.jpg' %}")
+
+                }else if (blind_pos == "100")
+                {
+                    console.log('BLIND POSITION 100: ', blind_pos)
+                    $('#estore_state').attr('src', "{% static 'images/estore_100.jpg' %}")
                 }
             });
 
             $("#opacity2").click(function () {
+                console.log('BLIND POSITION XX : ', blind_pos)
                 on_off_estores(false, 'estore_sala')
-                var i;
-                for(i=0; i<9; i++) {
-                    (function(i){
-                        setTimeout(function(){
-                        var pi = $('#estore_state').css('opacity');
-                        var pl = $('#estore_state').css('opacity');
-                        $("#estore_state").css("opacity", parseFloat(pi) - 0.1);
-                        $("#estore_state").css("opacity", parseFloat(pl) + 0.1);
-                        return false;
-                        }, 500*i);
-                    })(i);
+                on_off_estores2(false, 'estore_sala')
+
+                if (blind_pos == "0")
+                {
+                    console.log('BLIND POSITION 0: ', blind_pos);
+                    $('#estore_state').attr('src', "{% static 'images/estore_0.jpg' %}")
+                }else if (blind_pos == "25")
+                {
+                    console.log('BLIND POSITION 25: ', blind_pos);
+                    $('#estore_state').attr('src', "{% static 'images/estore_25.jpg' %}")
+                }else if (blind_pos == "50")
+                {
+                    console.log('BLIND POSITION 50: ', blind_pos);
+                    $('#estore_state').attr('src', "{% static 'images/estore_50.jpg' %}")
+                }else if (blind_pos == "75")
+                {
+                    console.log('BLIND POSITION 75: ', blind_pos);
+                    $('#estore_state').attr('src', "{% static 'images/estore_75.jpg' %}")
+
+                }else if (blind_pos == "100")
+                {
+                    console.log('BLIND POSITION 100: ', blind_pos)
+                    $('#estore_state').attr('src', "{% static 'images/estore_100.jpg' %}")
                 }
             });
 
